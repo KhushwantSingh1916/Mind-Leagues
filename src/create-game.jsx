@@ -18,7 +18,11 @@ const CreateGame = () => {
     setDifficulty("Easy");
   };
 
-  return (
+  const deleteQuestion = (indexToDelete) => {
+    setQuestions(questions.filter((_, index) => index !== indexToDelete));
+};
+
+return (
     <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-b from-purple-900 to-black text-white p-6 ">
       <motion.h1 
         className="text-4xl font-bold mb-6"
@@ -30,9 +34,15 @@ const CreateGame = () => {
       </motion.h1>
 
       <div className="w-full max-w-2xl bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col" style={{ height: "80vh" }}>
-      <div className="flex-1 overflow-y-auto mb-4">
-        {questions.map((q, idx) => (
-          <div key={idx} className="bg-gray-700 p-4 rounded mb-3">
+       <div className="flex-1 overflow-y-auto mb-4">
+         {questions.map((q, idx) => (
+          <div key={idx} className="bg-gray-700 p-4 rounded mb-3 relative">
+            <Button 
+                onClick={() => deleteQuestion(idx)} 
+                className="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white p-1 rounded-full transform transition-all hover:scale-110"
+              >
+              <span className="emoji-white pb-0.5">❌</span>
+            </Button>
             <p className="font-bold">{q.question}</p>
             <ul className="list-disc pl-5">
               {q.options.map((opt, i) => (

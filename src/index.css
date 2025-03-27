@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Sports Emoji Styles */
+.sports-emoji {
+  font-size: 4rem; /* Adjust size (1rem = 16px) */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Hover effect for larger emojis */
+.sports-emoji:hover {
+  transform: scale(1.2) rotate(10deg);
+  transition: transform 0.3s ease;
+}
+.emoji-white {
+  filter: brightness(0) invert(1);  /* Makes the emoji white */
+  display: inline-block;
+}

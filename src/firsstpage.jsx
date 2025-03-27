@@ -3,9 +3,39 @@ import { Link } from "react-router-dom";
 import { Button } from "./components/ui/button";
 import { motion } from "framer-motion";
 
+const SportIcon = ({ emoji, rotation, position }) => (
+  <motion.div
+    className="absolute sports-emoji text-4xl transform-gpu"
+    style={{ ...position }}
+    animate={{
+      rotate: rotation,
+      scale: [1, 1.2, 1],
+    }}
+    transition={{
+      duration: 10,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }}
+  >
+    {emoji}
+  </motion.div>
+);
 const FirstPage = () => {
+  const sportsIcons = [
+    { emoji: "🏀", rotation: 360, position: { top: "10%", left: "10%" } },
+    { emoji: "⚽", rotation: -360, position: { top: "5%", right: "25%" } },
+    { emoji: "🏏", rotation: 360, position: { bottom: "10%", left: "10%" } },
+    { emoji: "🏸", rotation: -360, position: { top: "15%", left: "40%" } },
+    { emoji: "🥊", rotation: 360, position: { bottom: "15%", right: "20%" } },
+    { emoji: "🎾", rotation: -360, position: { top: "40%", right: "10%" } },
+    { emoji: "🏓", rotation: -360, position: { bottom: "40%", left: "30%" } },
+  ];
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-gradient-to-b from-blue-900 to-black text-white text-center">
+         {/* Sports Icons */}
+         {sportsIcons.map((icon, index) => (
+        <SportIcon key={index} {...icon} />
+      ))}
       {/* Title */}
       <motion.h1 
         className="text-5xl font-bold mb-8"
