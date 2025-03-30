@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FirstPage from './firsstpage.jsx';
 import CreateGame from './create-game.jsx';
+import GameLobby from './game-detail.jsx';
 import './index.css';
 
 const root = document.getElementById('root');
@@ -17,6 +18,7 @@ ReactDOM.createRoot(root).render(
       <Routes>
         <Route path="/" element={<FirstPage />} />
         <Route path="/create-game" element={<CreateGame />} />
+        <Route path="/game-details" element={<GameLobby />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

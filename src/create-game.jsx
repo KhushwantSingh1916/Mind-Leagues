@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "./components/ui/button";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
 
 const CreateGame = () => {
   const [questions, setQuestions] = useState([]);
@@ -8,6 +10,7 @@ const CreateGame = () => {
   const [options, setOptions] = useState(["", "", "", ""]);
   const [correctAnswer, setCorrectAnswer] = useState(null);
   const [difficulty, setDifficulty] = useState("Easy");
+  const navigate = useNavigate();
 
   const addQuestion = () => {
     if (!newQuestion.trim() || correctAnswer === null) return;
@@ -17,6 +20,13 @@ const CreateGame = () => {
     setCorrectAnswer(null);
     setDifficulty("Easy");
   };
+
+  const generateGameLink = () => {
+    if (questions.length === 0) return;
+    const code = Math.random().toString(36).substring(2, 8).toUpperCase();
+    navigate(`/game-details?code=${code}`);
+  };
+
 
   const deleteQuestion = (indexToDelete) => {
     setQuestions(questions.filter((_, index) => index !== indexToDelete));
@@ -122,6 +132,12 @@ const CreateGame = () => {
           >
             ➕ Add Question
           </Button>
+
+          {questions.length > 0 && (
+          <Button onClick={generateGameLink} className=" w-full bg-green-500 text-black px-4 py-2 rounded-lg hover:bg-green-600">
+            🚀 Submit & Generate Link
+          </Button>
+        )}
         </div>
       </div>
     </div>
