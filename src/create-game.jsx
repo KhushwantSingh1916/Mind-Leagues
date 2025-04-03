@@ -34,6 +34,15 @@ const CreateGame = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-purple-900 to-black text-white p-6">
+    <motion.button
+      className="absolute top-4 left-4 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full flex items-center space-x-2 shadow-lg"
+      onClick={() => navigate('/')}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <span className="text-xl">←</span>
+      <span>Back</span>
+    </motion.button>
       <motion.h1 
         className="text-4xl font-bold mb-6"
         initial={{ opacity: 0, y: -20 }}
