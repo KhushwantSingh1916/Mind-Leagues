@@ -12,7 +12,7 @@ const PathSelection = () => {
         {/* Cricket Path - Bat Emoji */}
         <motion.div
           className="w-96 h-96 flex flex-col items-center justify-center rounded-full shadow-lg cursor-pointer hover:scale-110 bg-green-500 border-4 border-yellow-300"
-          onClick={() => navigate("/name-face-entry?path=cricket")}
+          onClick={() => navigate("/criket-entry?path=cricket")}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
         >
@@ -23,7 +23,7 @@ const PathSelection = () => {
         {/* Badminton Path - Racket Emoji */}
         <motion.div
           className="w-96 h-96 flex flex-col items-center justify-center rounded-full shadow-lg cursor-pointer hover:scale-110 bg-yellow-500 border-4 border-green-300"
-          onClick={() => navigate("/name-face-entry?path=badminton")}
+          onClick={() => navigate("/badminton-entry?path=badminton")}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
         >

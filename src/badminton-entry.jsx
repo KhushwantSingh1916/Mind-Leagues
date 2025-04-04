@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import Webcam from "react-webcam";
 
-const NameFaceEntry = () => {
+const BadmintonEntry = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [name, setName] = useState("");
@@ -106,4 +106,4 @@ const NameFaceEntry = () => {
   );
 };
 
-export default NameFaceEntry;
+export default BadmintonEntry;
