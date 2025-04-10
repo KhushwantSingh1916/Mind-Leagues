@@ -7,6 +7,14 @@ const PathSelection = () => {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-b from-blue-900 to-black text-white p-6">
+      <motion.button
+            className="absolute top-4 left-4 bg-gray-800 hover:bg-red-600 text-white px-6 py-2 rounded-full flex items-center space-x-2 shadow-lg"
+            onClick={() => navigate('/')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>Quit</span>
+          </motion.button>
       <h1 className="text-4xl font-bold mb-8">Choose Your Path ⚡</h1>
       <div className="flex space-x-12">
         {/* Cricket Path - Bat Emoji */}
